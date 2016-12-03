@@ -55,7 +55,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Configuration
 
-The following tables lists the configurable parameters of the WordPress chart and their default values.
+The following tables lists the configurable parameters of the Sapho chart and their default values.
 
 | Parameter                            | Description                              | Default                                                    |
 | -------------------------------      | -------------------------------          | ---------------------------------------------------------- |
@@ -70,12 +70,9 @@ The following tables lists the configurable parameters of the WordPress chart an
 | `persistence.enabled`                | Enable persistence using PVC             | `true`                                                     |
 | `persistence.apache.storageClass`    | PVC Storage Class for Apache volume      | `generic`                                                  |
 | `persistence.apache.accessMode`      | PVC Access Mode for Apache volume        | `ReadWriteOnce`                                            |
-| `persistence.apache.size`            | PVC Storage Request for Apache volume    | `1Gi`                                                      |
-| `persistence.wordpress.storageClass` | PVC Storage Class for WordPress volume   | `generic`                                                  |
-| `persistence.wordpress.accessMode`   | PVC Access Mode for WordPress volume     | `ReadWriteOnce`                                            |
-| `persistence.wordpress.size`         | PVC Storage Request for WordPress volume | `8Gi`                                                      |
+| `persistence.apache.size`            | PVC Storage Request for Apache volume    | `1Gi`                                               
 
-The above parameters map to the env variables defined in [sapho/wordpress](https://bitbucket.org/sapho/ops-docker-tomcat). For more information please refer to the [sapho/wordpress](https://bitbucket.org/sapho/ops-docker-tomcat) image documentation.
+The above parameters map to the env variables defined in [sapho/ops-docer-tomcat](https://bitbucket.org/sapho/ops-docker-tomcat). For more information please refer to the [sapho/ops-docker-tomcat](https://bitbucket.org/sapho/ops-docker-tomcat) image documentation.
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
@@ -89,14 +86,14 @@ The above command sets Sapho's JDBC connection's username and password to `root`
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install --name my-release -f values.yaml stable/wordpress
+$ helm install --name my-release -f values.yaml sapho
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
 
 ## Persistence
 
-The [Bitnami WordPress](https://github.com/bitnami/bitnami-docker-wordpress) image stores the WordPress data and configurations at the `/bitnami/wordpress` and `/bitnami/apache` paths of the container.
+The [MySQL](https://hub.docker.com/_/mysql/) image stores the data at the `/var/lib/mysql` path of the container which is mounted to a PVC.
 
 Persistent Volume Claims are used to keep the data across deployments. This is known to work in GCE, AWS, and minikube.
 See the [Configuration](#configuration) section to configure the PVC or to disable persistence.
