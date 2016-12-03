@@ -26,7 +26,7 @@ Download the latest release of the chart from the [releases](../../../releases) 
 Alternatively, clone the repo if you wish to use the development snapshot:
 
 ```console
-$ git clone https://github.com/kubernetes/charts.git
+$ git clone https://github.com/saphoinc/saphoHelmCharts.git
 ```
 
 ## Installing the Chart
@@ -34,7 +34,7 @@ $ git clone https://github.com/kubernetes/charts.git
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release sapho
+$ helm install --name my-release https://github.com/saphoinc/saphoHelmChart/archive/sapho-v1.0.tar.gz
 ```
 
 *Replace the `x.x.x` placeholder with the chart release version.*
