@@ -75,17 +75,16 @@ The following tables lists the configurable parameters of the WordPress chart an
 | `persistence.wordpress.accessMode`   | PVC Access Mode for WordPress volume     | `ReadWriteOnce`                                            |
 | `persistence.wordpress.size`         | PVC Storage Request for WordPress volume | `8Gi`                                                      |
 
-The above parameters map to the env variables defined in [bitnami/wordpress](http://github.com/bitnami/bitnami-docker-wordpress). For more information please refer to the [bitnami/wordpress](http://github.com/bitnami/bitnami-docker-wordpress) image documentation.
+The above parameters map to the env variables defined in [sapho/wordpress](https://bitbucket.org/sapho/ops-docker-tomcat). For more information please refer to the [sapho/wordpress](https://bitbucket.org/sapho/ops-docker-tomcat) image documentation.
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
 $ helm install --name my-release \
-  --set wordpressUsername=admin,wordpressPassword=password,mariadb.mariadbRootPassword=secretpassword \
-    stable/wordpress
+  --set saphoDBuser=root,saphoDBpass=password,mysql.mysqlRootPassword=password sapho
 ```
 
-The above command sets the WordPress application username and password to `admin` and `password` respectively. Additionally it sets the MariaDB `root` user password to `secretpassword`.
+The above command sets Sapho's JDBC connection's username and password to `root` and `password` respectively. Additionally it sets the MySQL `root` user password to `password`.
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
