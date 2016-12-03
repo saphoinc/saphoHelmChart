@@ -69,7 +69,7 @@ The following tables lists the configurable parameters of the Sapho chart and th
 | `serviceType`                        | Kubernetes Service type                  | `LoadBalancer`                                             |
 | `persistence.enabled`                | Enable persistence using PVC             | `true`                                                                                       
 
-The above parameters map to the env variables defined in [sapho/ops-docer-tomcat](https://bitbucket.org/sapho/ops-docker-tomcat). For more information please refer to the [sapho/ops-docker-tomcat](https://bitbucket.org/sapho/ops-docker-tomcat) image documentation.
+The above parameters map to the env variables defined in [sapho/ops-docker-tomcat](https://bitbucket.org/sapho/ops-docker-tomcat). For more information please refer to the [sapho/ops-docker-tomcat](https://bitbucket.org/sapho/ops-docker-tomcat) image documentation.
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
