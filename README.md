@@ -67,10 +67,7 @@ The following tables lists the configurable parameters of the Sapho chart and th
 | `saphoDBhost`                        | Sapho DB HostName                        | `nil`                                                      |
 | `mysql.mysqlRootPassword`            | MySQL admin password                     | `nil`                                                      |
 | `serviceType`                        | Kubernetes Service type                  | `LoadBalancer`                                             |
-| `persistence.enabled`                | Enable persistence using PVC             | `true`                                                     |
-| `persistence.apache.storageClass`    | PVC Storage Class for Apache volume      | `generic`                                                  |
-| `persistence.apache.accessMode`      | PVC Access Mode for Apache volume        | `ReadWriteOnce`                                            |
-| `persistence.apache.size`            | PVC Storage Request for Apache volume    | `1Gi`                                               
+| `persistence.enabled`                | Enable persistence using PVC             | `true`                                                                                       
 
 The above parameters map to the env variables defined in [sapho/ops-docer-tomcat](https://bitbucket.org/sapho/ops-docker-tomcat). For more information please refer to the [sapho/ops-docker-tomcat](https://bitbucket.org/sapho/ops-docker-tomcat) image documentation.
 
