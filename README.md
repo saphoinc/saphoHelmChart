@@ -31,10 +31,10 @@ $ git clone https://github.com/saphoinc/saphoHelmChart.git
 
 ## Installing the Chart
 
-To install the chart with the release name `my-release`:
+To install the chart:
 
 ```console
-$ helm install --name my-release https://github.com/saphoinc/saphoHelmChart/archive/sapho-v1.0.tar.gz
+$ helm install https://github.com/saphoinc/saphoHelmChart/archive/sapho-v1.0.tar.gz
 ```
 
 *Replace the `x.x.x` placeholder with the chart release version.*
@@ -45,7 +45,7 @@ The command deploys Sapho on the Kubernetes cluster in the default configuration
 
 ## Uninstalling the Chart
 
-To uninstall/delete the `my-release` deployment:
+To uninstall/delete the `my-release` deployment, use `helm list` command to obtain the release name, then :
 
 ```console
 $ helm delete my-release
@@ -74,8 +74,7 @@ The above parameters map to the env variables defined in [sapho/ops-docer-tomcat
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
-$ helm install --name my-release \
-  --set saphoDBuser=root,saphoDBpass=password,mysql.mysqlRootPassword=password sapho
+$ helm install --set saphoDBuser=root,saphoDBpass=password,mysql.mysqlRootPassword=password sapho
 ```
 
 The above command sets Sapho's JDBC connection's username and password to `root` and `password` respectively. Additionally it sets the MySQL `root` user password to `password`.
